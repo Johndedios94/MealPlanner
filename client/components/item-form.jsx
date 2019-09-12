@@ -4,8 +4,8 @@ class ItemForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      item: '',
-      status: false
+      ingredients_desc: '',
+      is_completed: 0
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -13,15 +13,16 @@ class ItemForm extends React.Component {
 
   handleChange(event) {
     this.setState({
-      list: event.target.value
+      item: event.target.value
     });
   }
 
   handleSubmit(event) {
+    console.group("handleSubmit ", this.state.item)
     event.preventDefault();
     const newItem = {
-      item: this.state.item,
-      isChecked: false
+      ingredient_desc: this.state.item,
+      isChecked: 0
     };
     this.props.onSubmit(newItem);
     this.setState({

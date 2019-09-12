@@ -2,7 +2,7 @@ import React from 'react';
 import Item from './item';
 
 function ItemList(props) {
-  console.log(props);
+  console.log("the props are ", props);
   console.log(props.items);
   return (
     <ul>

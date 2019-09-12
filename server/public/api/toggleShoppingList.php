@@ -1,16 +1,19 @@
 <?php
-
 require_once('functions.php');
 require_once('db_connection.php');
 set_exception_handler('error_handler');
 
 startUp();
 
-//calendar need the date, name/label, mealtime
-$query = "SELECT `recipe`.`label` from `recipe` JOIN `calendar` ON `calendar`.`recipe_id` = `recipe`.`id`";
+$json_input = file_get_contents('php://input');
+$obj = json_decode($json_input, true);
 
+$id = $obj['itemId'];
+;
+
+$query = "UPDATE `shopping_list` SET `shopping_list`.`is_completed` = 1 WHERE id = '$id'";
+var_dump($query);
 $result = mysqli_query($conn, $query);
-
 
 
 if (!$result) {
@@ -25,5 +28,3 @@ while ($row = mysqli_fetch_assoc($result)) {
 };
 
 print(json_encode($output));
-
-?>

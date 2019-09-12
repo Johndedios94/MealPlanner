@@ -6,9 +6,22 @@ set_exception_handler('error_handler');
 startUp();
 
 //work on query
+$query = "(
+    SELECT shopping_list.id, shopping_list.is_completed, recipe_ingredients.ingredients_desc
+    FROM `shopping_list`
+    JOIN `recipe_ingredients` ON `shopping_list`.`ingredients_Id` = `recipe_ingredients`.`id`
+)
+UNION
+(
+	SELECT id, is_completed, ingredient_text AS ingredients_desc
+    FROM `shopping_list`
+    WHERE ingredients_id IS NULL
+)
+ORDER BY id ASC";
 
-$query= "SELECT * FROM `shopping_list` JOIN `recipe_ingredients` ON `shopping_list`.`ingredientsId` = `recipe_ingredients`.`id`";
 
+// $query= "SELECT * FROM `shopping_list` JOIN `recipe_ingredients` ON `shopping_list`.`ingredients_Id` = `recipe_ingredients`.`id`";
+// $query = "SELECT * FROM `shopping_list`";
 $result = mysqli_query($conn, $query);
 
 

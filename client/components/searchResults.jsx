@@ -45,7 +45,7 @@ export class SearchResults extends React.Component {
           })}
         </section>
       </div>
-    ); 
+    );
   }
 }
 

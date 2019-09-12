@@ -17,7 +17,7 @@ $result = mysqli_query($conn, $query);
 
 if (!$result) {
   throw new Exception(mysqli_connect_error());
-} 
+}
 
 $output = [];
 while ($row = mysqli_fetch_assoc($result)) {
