@@ -14,6 +14,7 @@ $ingredient = $obj['ingredients_desc'];
 $query = "INSERT INTO `shopping_list`(ingredient_text,is_completed) VALUES ('$ingredient', 0)";
 
 $result = mysqli_query($conn, $query);
+// var_dump("affected row is ", mysqli_affected_rows($result))
 
 
 if (!$result) {

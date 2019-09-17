@@ -31,7 +31,9 @@ $output = [];
 while ($row = mysqli_fetch_assoc($result)) {
   $output[] = $row;
 };
-// var_dump("output is ", boolval($output[0]["is_completed"]);
+// var_dump("output is ", boolval($output[0]["is_completed"]));
 
+
+// var_dump("output is ", $output);
 print(json_encode($output));
 ?>

@@ -75,9 +75,9 @@ class App extends React.Component {
     };
 
     fetch('/api/addIngredientsToShoppingList.php', req)
-      .then(res => res.json())
+      .then(res =>  res.json())
       .then(addItem=> {
-        // console.log("add ingredients to shoppingList Page",addItem)
+        console.log("add ingredients to shoppingList Page",addItem)
         const allItems = this.state.addItemToShoppingList .concat(addItem);
         this.setState({ addingredients: allItems });
       });

@@ -49,11 +49,6 @@ class ShoppingList extends React.Component {
       .then(response => response.json())
       .then(data => {
         debugger;
-        // var getData = data;
-        // console.log("get data is ", getData)
-        // var test = getData.map(bool => {
-        //   return console.log(data)
-        // })
         console.log("data add is ", data)
         this.setState({ shoppingList: data });
       }
@@ -87,8 +82,8 @@ class ShoppingList extends React.Component {
     //   shoppingList: this.state.shoppingList.filter(itemId => itemId !== id)
     // });
     // this.getAllItems()
-      
-      
+
+
 //   deleteItem(itemId) {
 //     console.log(itemId);
 
@@ -99,6 +94,8 @@ class ShoppingList extends React.Component {
 //       shoppingList: updatedList
 //     });
 //     console.log(this.state.shoppingList);
+console.log("hit this delete");
+this.getAllItems();
 
   }
 

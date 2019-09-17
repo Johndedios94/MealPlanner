@@ -12,10 +12,11 @@ $obj = json_decode($json_input, true);
 
 
 $query = "DELETE FROM `shopping_list` WHERE id = '$obj'";
-var_dump("query is ", $query);
+// var_dump("query is ", $query);
 
 $result = mysqli_query($conn, $query);
-var_dump("affected rows ", mysqli_affected_rows($result))
+// $rc = mysqli_affected_rows($result);
+// var_dump("result is ", $result);
 
 // if (!$result) {
 //   throw new Exception(mysqli_connect_error());
@@ -27,6 +28,8 @@ var_dump("affected rows ", mysqli_affected_rows($result))
 // while ($row = mysqli_fetch_assoc($result)) {
 //   $output[] = $row;
 // };
+// var_dump("affected row is ", mysqli_affected_rows($conn));
+// var_dump("output is ", $output);
 
-// print(json_encode($output))
+// print(json_encode($output));
 ?>
